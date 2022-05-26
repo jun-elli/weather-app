@@ -11,5 +11,7 @@ $theme-colors: (
     "danger":     #fd2323,
 );
 
+$body-bg: #c9eaf7;
+
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
