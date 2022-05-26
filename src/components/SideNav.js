@@ -1,10 +1,14 @@
 import { useState } from "react";
+import logo from "../icons/weather-icon.png"
+import "../App.css"
 
 function SideNav() {
     return (
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark" >
             <div className="container-fluid" >
-                <a class="navbar-brand" href="#">Logo</a>
+                <a class="navbar-brand container " href="#">
+                    <img src={logo} alt="Weather logo" className="img-fluid img-logo"/>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
