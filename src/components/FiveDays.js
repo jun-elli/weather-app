@@ -3,7 +3,7 @@ import { useState } from "react";
 function FiveDays() {
     return (
         <div>
-            I'm a side navbar!
+            I show the weather for the next 5 days
         </div>
     )
 };

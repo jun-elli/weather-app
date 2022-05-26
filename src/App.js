@@ -6,7 +6,7 @@ import FiveDays from './components/FiveDays';
 
 function App() {
   return (
-    <div className="bg-light">
+    <div className="bg-light text-align">
       <SideNav />
       <Search />
       <Today />
