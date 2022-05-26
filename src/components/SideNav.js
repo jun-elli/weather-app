@@ -6,9 +6,8 @@ function SideNav() {
     return (
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark" >
             <div className="container-fluid" >
-                <a class="navbar-brand container " href="#">
-                    <img src={logo} alt="Weather logo" className="img-fluid img-logo"/>
-                </a>
+                <img src={logo} alt="Weather logo" className="img-fluid img-logo m-2"/>
+                <h1 className="text-secondary ms-4" >My weather</h1>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
