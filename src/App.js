@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [isToday, setIsToday] = useState(true);
-  const [location, setLocation] = useState("Reus");
+  const [location, setLocation] = useState("Barcelona");
   const [currentWeather, setCurrentWeather] = useState(null);
   const [nextWeather, setNextWeather] = useState(null);
 
@@ -41,11 +41,16 @@ function App() {
   };
 
   return (
-    <div className="bg-light text-align">
+    <div className="bg-light text-center">
       <SideNav isToday={isToday} setIsToday={setIsToday} />
       <Search setLocation={setLocation} />
-      <Today isToday={isToday} />
-      <FiveDays isToday={isToday} />
+      <div className="container">
+        {isToday ? (
+          <Today weather={currentWeather} />
+        ) : (
+          <FiveDays weather5={nextWeather} />
+        )}
+      </div>
     </div>
   );
 }
