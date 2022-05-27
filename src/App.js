@@ -1,4 +1,5 @@
 import "./App.css";
+import key from "./APIkey.js";
 import SideNav from "./components/SideNav";
 import Search from "./components/Search";
 import Today from "./components/Today";
@@ -16,12 +17,11 @@ function App() {
     getNexttWeather();
   }, [location]);
 
-  //For a local run, type here your own Open Weather API key
-  const APIkey = "";
-
   let getCurrentWeather = async () => {
+    console.log("getcurrentweather has been triggered");
+    console.log(key);
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${APIkey}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${key}`
     );
     if (response.status !== 200) {
       throw new Error("cannot fetch data");
@@ -32,7 +32,7 @@ function App() {
 
   let getNexttWeather = async () => {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${APIkey}`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${key}`
     );
     if (response.status !== 200) {
       throw new Error("cannot fetch data");
@@ -46,11 +46,8 @@ function App() {
       <SideNav isToday={isToday} setIsToday={setIsToday} />
       <Search setLocation={setLocation} />
       <div className="container">
-        {isToday ? (
-          <Today weather={currentWeather} />
-        ) : (
-          <FiveDays weather5={nextWeather} />
-        )}
+        {isToday && currentWeather && <Today weather={currentWeather} />}
+        {!isToday && nextWeather && <FiveDays weather5={nextWeather} />}
       </div>
     </div>
   );
