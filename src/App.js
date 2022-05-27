@@ -18,8 +18,6 @@ function App() {
   }, [location]);
 
   let getCurrentWeather = async () => {
-    console.log("getcurrentweather has been triggered");
-    console.log(key);
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${key}`
     );
