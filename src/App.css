@@ -1,3 +1,7 @@
 .img-logo {
     width: 50px;
 }
+
+.input-sm {
+    max-width: 500px;
+}
