@@ -16,7 +16,8 @@ function App() {
     getNexttWeather();
   }, [location]);
 
-  const APIkey = "a4ffdb60cbf2f99a74e15715a1531bcc";
+  //For a local run, type here your own Open Weather API key
+  const APIkey = "";
 
   let getCurrentWeather = async () => {
     const response = await fetch(
