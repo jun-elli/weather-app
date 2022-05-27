@@ -2,7 +2,8 @@ import { useState } from "react";
 import logo from "../icons/weather-icon.png"
 import "../App.css"
 
-function SideNav() {
+function SideNav( {isToday, setIsToday} ) {
+    
     return (
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark" >
             <div className="container-fluid" >
@@ -14,10 +15,10 @@ function SideNav() {
                 <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                     <ul class="navbar-nav gap-3">
                         <li class="nav-item">
-                            <button type="button" class="btn btn-secondary">Today's weather</button>
+                            <button type="button" class={`btn ${isToday ? "btn-secondary" : "btn-primary"}`} onClick={() => setIsToday(true)}>Today's weather</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-primary">Next 5 days</button>
+                            <button type="button" class={`btn ${!isToday ? "btn-secondary" : "btn-primary"}`} onClick={() => setIsToday(false)}>Next 5 days</button>
                         </li>
                     </ul>
                 </div>

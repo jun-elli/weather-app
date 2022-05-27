@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function Today() {
+function Today({isToday}) {
     return (
         <div>
-            I show the weather for today
+            {isToday && <p>I show the weather for today</p>}
         </div>
     )
 };
