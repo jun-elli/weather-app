@@ -9,14 +9,9 @@ function App() {
   const [isToday, setIsToday] = useState(true);
   const [location, setLocation] = useState("");
 
-  //change which component is shown
-  const handleSetToday = (boolean) => {
-    setIsToday(boolean);
-  };
-
   return (
     <div className="bg-light text-align">
-      <SideNav isToday={isToday} setIsToday={handleSetToday} />
+      <SideNav isToday={isToday} setIsToday={setIsToday} />
       <Search setLocation={setLocation} />
       <Today isToday={isToday} />
       <FiveDays isToday={isToday} />
