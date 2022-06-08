@@ -17,6 +17,7 @@ function Today({ weather }) {
   return (
     <div className="container d-flex flex-column mt-4 pt-2 mb-2 align-items-center justify-content-center">
       <img className="icon-m card-img-top" src={icon} />
+      <h3>{weather.main.temp} ºC</h3>
       <div className="card card-m text-center border-info mt-5">
         <h2 className="card-header bg-info text-white">{weather.name}</h2>
         <div className="card-body">

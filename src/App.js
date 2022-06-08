@@ -11,6 +11,7 @@ function App() {
   const [location, setLocation] = useState("Barcelona");
   const [currentWeather, setCurrentWeather] = useState(null);
   const [nextWeather, setNextWeather] = useState(null);
+  const [units, setUnits] = useState("metric");
 
   useEffect(() => {
     getCurrentWeather();
@@ -19,7 +20,7 @@ function App() {
 
   let getCurrentWeather = async () => {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${key}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${units}&appid=${key}`
     );
     if (response.status !== 200) {
       throw new Error("cannot fetch data");
@@ -30,7 +31,7 @@ function App() {
 
   let getNexttWeather = async () => {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${key}`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=${units}&appid=${key}`
     );
     if (response.status !== 200) {
       throw new Error("cannot fetch data");
